@@ -33,7 +33,8 @@ matrix:
         - export PATH=$GRADLE_HOME/bin:$PATH
         - git clone https://github.com/flutter/flutter.git --depth 1
       script:
-        - ./flutter/bin/flutter build apk
+        - ./flutter/bin/flutter --version
+        - ./flutter/bin/flutter build apk --debug
 
     - os: osx
       language: generic
@@ -46,6 +47,7 @@ matrix:
         - brew install ios-deploy
         - git clone https://github.com/flutter/flutter.git --depth 1
       script:
+        - ./flutter/bin/flutter --version
         - ./flutter/bin/flutter build ios --no-codesign
 
 cache:
